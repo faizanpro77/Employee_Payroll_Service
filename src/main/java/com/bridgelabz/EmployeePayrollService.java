@@ -24,7 +24,6 @@ public class EmployeePayrollService {
         System.out.println("Enter Employee Salary: ");
         double salary = consoleInputReader.nextDouble();
         employeePayrollDataList.add(new EmployeePayrollData(id, name, salary));
-
     }
 
     private void writeEmployeePayrollData(){
