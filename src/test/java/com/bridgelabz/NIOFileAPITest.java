@@ -9,11 +9,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.IntStream;
+
 public class NIOFileAPITest {
     public static final String HOME = System.getProperty("user.home");
     public static final String PLAY_WITH_NIO = "TempPlayground";
+
     @Test
-    public void givenPath_whenChecked_thenConfirm() throws IOException {
+    public void givenPathWhenCheckedThenConfirm() throws IOException {
         //Check file Exists
         Path homePath = Paths.get(HOME);
         Assert.assertTrue(Files.exists(homePath));
@@ -45,5 +47,12 @@ public class NIOFileAPITest {
         Files.list(playPath).filter(Files::isRegularFile).forEach(System.out::println);
         Files.newDirectoryStream(playPath).forEach(System.out::println);
         Files.newDirectoryStream(playPath, path -> path.toFile().isFile() && path.toString().startsWith("temp")).forEach(System.out::println);
+    }
+
+    @Test
+    void givenDirectoryWhenWatchedListsAllTheActivities() throws IOException {
+        Path dir = Paths.get(HOME + "/" + PLAY_WITH_NIO);
+        Files.list(dir).filter(Files::isRegularFile).forEach(System.out::println);
+        new FileWatchService(dir).processEvents();
     }
 }
