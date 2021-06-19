@@ -30,6 +30,22 @@ public class EmployeePayrollService {
         System.out.println("Writing employee payroll to console\n" + employeePayrollDataList);
     }
 
+    public void writeEmployeeData(IOService ioService) {
+        if (ioService.equals(IOService.CONSOLE_IO))
+            System.out.println("Writing Employee Payroll Roster in Console\n" + employeePayrollDataList);
+        else if (ioService.equals(IOService.FILE_IO)) {
+            EmployeePayrollFileIOService.writeData(employeePayrollDataList);
+        }
+    }
+
+    public long countEntries(IOService ioService) {
+        if (ioService.equals(IOService.CONSOLE_IO))
+            return employeePayrollDataList.size();
+        else if (ioService.equals(IOService.FILE_IO))
+            return EmployeePayrollFileIOService.countEntries();
+        return 0;
+    }
+
     public static void main(String[] args) {
         System.out.println("welcome to employee payroll service");
         ArrayList<EmployeePayrollData> employeePayrollDataList = new ArrayList<EmployeePayrollData>();
