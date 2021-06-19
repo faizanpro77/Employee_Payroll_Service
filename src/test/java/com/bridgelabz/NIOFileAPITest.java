@@ -58,7 +58,7 @@ public class NIOFileAPITest {
     }
 
     @Test
-    public void numberOfEmployeeEntryTest() {
+    public void given3EmployeeWhenWrittenToFileShouldMatchEmployeeEntries() {
         EmployeePayrollData[] empArray = {
                 new EmployeePayrollData(1, "Jeff Bezos", 100000.0),
                 new EmployeePayrollData(2, "Bill Gates", 200000.0),
@@ -69,6 +69,14 @@ public class NIOFileAPITest {
         employeePayrollService.printData(EmployeePayrollService.IOService.FILE_IO);
         long entries = employeePayrollService.countEntries(EmployeePayrollService.IOService.FILE_IO);
         System.out.println("Entries into file are: " + entries);
+        Assert.assertEquals(3, entries);
+    }
+
+    @Test
+    public void givenFileOnReadingFromFileShouldMatchEmployeeCount() {
+        EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+        employeePayrollService.readDataFromFile(EmployeePayrollService.IOService.FILE_IO);
+        long entries = employeePayrollService.countEntries(EmployeePayrollService.IOService.FILE_IO);
         Assert.assertEquals(3, entries);
     }
 }

@@ -49,7 +49,7 @@ public class FileWatchService {
                 WatchEvent.Kind kind = event.kind();
                 Path name = (Path) event.context();
                 Path child = dir.resolve(name);
-                System.out.format("%s: %s\n", event.kind().name(), child); //print out event
+                System.out.format("%s: %s \n", event.kind().name(), child); //print out event
 
                 //if directory is created then register it and its sub-directories
                 if (kind.equals(ENTRY_CREATE)) {

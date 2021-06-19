@@ -52,6 +52,12 @@ public class EmployeePayrollService {
         }
     }
 
+    public void readDataFromFile(IOService ioService){
+        if(ioService.equals(IOService.CONSOLE_IO)){
+            new EmployeePayrollFileIOService().readDataFromFile();
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("welcome to employee payroll service");
         ArrayList<EmployeePayrollData> employeePayrollDataList = new ArrayList<EmployeePayrollData>();

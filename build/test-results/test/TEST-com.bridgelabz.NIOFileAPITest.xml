@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.NIOFileAPITest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-19T11:07:58" hostname="DESKTOP-I19OHT9" time="0.117">
+<testsuite name="com.bridgelabz.NIOFileAPITest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-19T11:47:25" hostname="DESKTOP-I19OHT9" time="0.018">
   <properties/>
-  <testcase name="numberOfEmployeeEntryTest" classname="com.bridgelabz.NIOFileAPITest" time="0.117"/>
-  <system-out><![CDATA[EmployeePayrollData{name='Jeff Bezos', id=1, salary=100000.0}
-EmployeePayrollData{name='Bill Gates', id=2, salary=200000.0}
-EmployeePayrollData{name='Mark Zuckerberg', id=3, salary=300000.0}
-Entries into file are: 3
-]]></system-out>
+  <testcase name="givenFile_onReadingFromFile_shouldMatchEmployeeCount" classname="com.bridgelabz.NIOFileAPITest" time="0.018"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
