@@ -20,6 +20,14 @@ public class EmployeePayrollFileIOService {
         }
     }
 
+    public void printDataFromFile() {
+        try {
+            Files.lines(new File(PAYROLL_FILE_NAME).toPath()).forEach(System.out::println);
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+    }
+
     public static long countEntries() {
         long entries = 0;
         try {

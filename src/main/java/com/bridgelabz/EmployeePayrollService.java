@@ -46,6 +46,12 @@ public class EmployeePayrollService {
         return 0;
     }
 
+    public void printData(IOService ioService){
+        if (ioService.equals(IOService.FILE_IO)){
+            new EmployeePayrollFileIOService().printDataFromFile();
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("welcome to employee payroll service");
         ArrayList<EmployeePayrollData> employeePayrollDataList = new ArrayList<EmployeePayrollData>();
